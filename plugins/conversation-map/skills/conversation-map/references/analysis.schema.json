@@ -1,0 +1,102 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://conversation-map.local/schemas/analysis-draft-1.json",
+  "title": "Conversation Map analysis draft (schema version 1)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "title", "coverage", "nodes", "relations"],
+  "properties": {
+    "schemaVersion": { "const": "1" },
+    "title": { "type": "string", "minLength": 1, "maxLength": 140 },
+    "coverage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status"],
+      "properties": {
+        "status": { "enum": ["complete", "partial"] },
+        "note": { "type": "string", "maxLength": 1000 }
+      }
+    },
+    "nodes": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 3000,
+      "items": { "$ref": "#/$defs/node" }
+    },
+    "relations": {
+      "type": "array",
+      "maxItems": 6000,
+      "items": { "$ref": "#/$defs/relation" }
+    },
+    "notes": {
+      "type": "array",
+      "maxItems": 50,
+      "items": { "type": "string", "maxLength": 1000 }
+    }
+  },
+  "$defs": {
+    "key": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]{0,63}$", "not": { "const": "root" } },
+    "classification": {
+      "enum": [
+        "user_statement",
+        "assistant_statement",
+        "fact",
+        "suggestion",
+        "decision",
+        "rejected_proposal",
+        "superseded_decision",
+        "open_question",
+        "answered_question",
+        "action_item",
+        "completed_action",
+        "inference",
+        "unknown"
+      ]
+    },
+    "relationType": {
+      "enum": ["supports", "contradicts", "supersedes", "answers", "implements", "depends_on", "related"]
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["message", "quote"],
+      "properties": {
+        "message": { "type": "string", "minLength": 1, "maxLength": 64 },
+        "quote": { "type": "string", "minLength": 3, "maxLength": 600 }
+      }
+    },
+    "node": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["key", "parent", "kind", "title", "summary"],
+      "properties": {
+        "key": { "$ref": "#/$defs/key" },
+        "parent": { "anyOf": [{ "$ref": "#/$defs/key" }, { "type": "null" }] },
+        "kind": { "enum": ["topic", "item"] },
+        "title": { "type": "string", "minLength": 1, "maxLength": 140 },
+        "summary": { "type": "string", "maxLength": 1200 },
+        "detail": { "type": "string", "maxLength": 6000 },
+        "classification": { "$ref": "#/$defs/classification" },
+        "rationale": { "type": "string", "maxLength": 1200 },
+        "evidence": { "type": "array", "maxItems": 12, "items": { "$ref": "#/$defs/evidence" } },
+        "supersededBy": { "$ref": "#/$defs/key" },
+        "owner": { "type": "string", "maxLength": 80 },
+        "due": { "type": "string", "maxLength": 80 }
+      },
+      "if": { "properties": { "kind": { "const": "item" } } },
+      "then": { "required": ["classification"] },
+      "else": { "not": { "required": ["classification"] } }
+    },
+    "relation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["from", "to", "type"],
+      "properties": {
+        "from": { "$ref": "#/$defs/key" },
+        "to": { "$ref": "#/$defs/key" },
+        "type": { "$ref": "#/$defs/relationType" },
+        "note": { "type": "string", "maxLength": 1000 }
+      }
+    }
+  }
+}

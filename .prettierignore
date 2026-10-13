@@ -1,0 +1,9 @@
+node_modules/
+build/
+test-results/
+playwright-report/
+.tmp/
+package-lock.json
+examples/*/output/
+examples/*/transcript.*
+plugins/conversation-map/skills/conversation-map/scripts/

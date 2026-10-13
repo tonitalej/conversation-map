@@ -1,0 +1,31 @@
+{
+  "name": "conversation-map",
+  "version": "1.0.0",
+  "description": "Turn a conversation into an interactive, evidence-linked map of topics, decisions, open questions and actions.",
+  "author": {
+    "name": "Tony",
+    "url": "https://github.com/tonitalej"
+  },
+  "homepage": "https://github.com/tonitalej/conversation-map",
+  "repository": "https://github.com/tonitalej/conversation-map",
+  "license": "MIT",
+  "keywords": ["conversation", "transcript", "mind map", "decisions", "action items", "knowledge map"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Conversation Map",
+    "shortDescription": "Map decisions, questions and actions in a chat",
+    "longDescription": "Turns the current conversation or a supplied transcript into a self-contained interactive map. Every entry is classified (decision, suggestion, open question, action, statement, inference, and more), linked to verbatim quotes that are checked against the transcript, and connected to related entries. Runs locally with Node.js; no network access.",
+    "developerName": "Tony",
+    "category": "Productivity",
+    "capabilities": ["Read", "Write"],
+    "defaultPrompt": [
+      "Map this conversation: topics, decisions, open questions and next actions",
+      "Turn transcript.md into an interactive conversation map",
+      "What did we decide, and what is still open? Show it as a map"
+    ],
+    "composerIcon": "./assets/icon.svg",
+    "logo": "./assets/icon.svg",
+    "brandColor": "#0D6E66",
+    "screenshots": []
+  }
+}

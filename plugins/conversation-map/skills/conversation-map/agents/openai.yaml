@@ -1,0 +1,7 @@
+interface:
+  display_name: 'Conversation Map'
+  short_description: 'Map decisions, questions and actions in a chat'
+  icon_small: './assets/icon.svg'
+  icon_large: './assets/icon.svg'
+  brand_color: '#0D6E66'
+  default_prompt: 'Use $conversation-map to turn this conversation into an interactive map of topics, decisions, open questions and next actions.'

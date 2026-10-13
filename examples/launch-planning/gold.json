@@ -1,0 +1,159 @@
+{
+  "transcript": "transcript.md",
+  "description": "Hand-labelled reference items for the launch-planning example. 'trap' marks items that are easy to misclassify.",
+  "items": [
+    {
+      "id": "g-three-tiers",
+      "title": "Three pricing tiers proposal",
+      "classification": "rejected_proposal",
+      "messages": ["m2", "m3"],
+      "trap": true
+    },
+    {
+      "id": "g-two-tiers",
+      "title": "Two tiers Free and Pro",
+      "classification": "decision",
+      "messages": ["m3"],
+      "speaker": "user"
+    },
+    {
+      "id": "g-team-later",
+      "title": "Team tier later",
+      "classification": "suggestion",
+      "messages": ["m3"],
+      "speaker": "user",
+      "trap": true
+    },
+    {
+      "id": "g-limit-question",
+      "title": "Free tier limited by notebooks or storage",
+      "classification": "answered_question",
+      "messages": ["m4"],
+      "speaker": "assistant"
+    },
+    {
+      "id": "g-three-notebooks",
+      "title": "Free tier includes 3 notebooks",
+      "classification": "decision",
+      "messages": ["m5"],
+      "speaker": "user"
+    },
+    {
+      "id": "g-unlimited-mockups",
+      "title": "Mockups show unlimited notebooks",
+      "classification": "user_statement",
+      "messages": ["m14"],
+      "speaker": "user"
+    },
+    {
+      "id": "g-confirm-priya",
+      "title": "Confirm limit with Priya",
+      "classification": "suggestion",
+      "messages": ["m15"],
+      "speaker": "assistant",
+      "trap": true
+    },
+    {
+      "id": "g-pricing-page",
+      "title": "Draft the pricing page",
+      "classification": "action_item",
+      "messages": ["m13"],
+      "speaker": "user"
+    },
+    {
+      "id": "g-march-3",
+      "title": "Launch on March 3",
+      "classification": "superseded_decision",
+      "messages": ["m6"],
+      "speaker": "user",
+      "trap": true
+    },
+    {
+      "id": "g-march-17",
+      "title": "Launch on March 17",
+      "classification": "decision",
+      "messages": ["m11"],
+      "speaker": "user"
+    },
+    {
+      "id": "g-early-march",
+      "title": "Early March works if QA finishes in February",
+      "classification": "assistant_statement",
+      "messages": ["m2"],
+      "speaker": "assistant"
+    },
+    {
+      "id": "g-regression",
+      "title": "Regression testing takes two to three weeks",
+      "classification": "assistant_statement",
+      "messages": ["m7"],
+      "speaker": "assistant"
+    },
+    {
+      "id": "g-beta",
+      "title": "Café-mode sync still in beta",
+      "classification": "assistant_statement",
+      "messages": ["m7"],
+      "speaker": "assistant"
+    },
+    {
+      "id": "g-customer",
+      "title": "Customer reports slow sync",
+      "classification": "user_statement",
+      "messages": ["m8"],
+      "speaker": "user"
+    },
+    {
+      "id": "g-changelog-claim",
+      "title": "Assistant claimed it updated the changelog",
+      "classification": "assistant_statement",
+      "messages": ["m9"],
+      "speaker": "assistant",
+      "trap": true
+    },
+    {
+      "id": "g-changelog-update",
+      "title": "Update the changelog after the fix ships",
+      "classification": "action_item",
+      "messages": ["m10"],
+      "speaker": "user"
+    },
+    {
+      "id": "g-conversion",
+      "title": "Signup to active conversion 3.2%",
+      "classification": "fact",
+      "messages": ["m1"],
+      "speaker": "user"
+    },
+    {
+      "id": "g-checklist",
+      "title": "Guided onboarding checklist",
+      "classification": "suggestion",
+      "messages": ["m2"],
+      "speaker": "assistant"
+    },
+    {
+      "id": "g-referral",
+      "title": "Referral program",
+      "classification": "suggestion",
+      "messages": ["m2"],
+      "speaker": "assistant",
+      "trap": true
+    },
+    {
+      "id": "g-postgres",
+      "title": "Analytics database migrated to Postgres 16",
+      "classification": "completed_action",
+      "messages": ["m13"],
+      "speaker": "user"
+    },
+    {
+      "id": "g-gdpr",
+      "title": "GDPR review needed before launch",
+      "classification": "open_question",
+      "messages": ["m16"],
+      "speaker": "user",
+      "trap": true
+    }
+  ]
+}

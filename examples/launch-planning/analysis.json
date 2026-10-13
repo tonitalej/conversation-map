@@ -1,0 +1,316 @@
+{
+  "schemaVersion": "1",
+  "title": "Notely 2.0 launch planning",
+  "coverage": { "status": "complete", "note": "All 17 messages were analyzed in one pass." },
+  "nodes": [
+    {
+      "key": "pricing",
+      "parent": null,
+      "kind": "topic",
+      "title": "Pricing",
+      "summary": "Tier structure and free-tier limits for 2.0."
+    },
+    {
+      "key": "pricing-three-tiers",
+      "parent": "pricing",
+      "kind": "item",
+      "classification": "rejected_proposal",
+      "title": "Three tiers: Free, Pro, Team",
+      "summary": "Assistant proposed Free, Pro at $8/month and Team at $14 per seat. The user declined it for launch.",
+      "rationale": "Proposed by the assistant; the user explicitly said three tiers was too much for launch.",
+      "evidence": [
+        { "message": "m2", "quote": "I'd suggest three tiers: Free, Pro at $8/month, and Team at $14 per seat" },
+        { "message": "m3", "quote": "Three tiers feels like too much for launch." }
+      ]
+    },
+    {
+      "key": "pricing-two-tiers",
+      "parent": "pricing",
+      "kind": "item",
+      "classification": "decision",
+      "title": "Launch with two tiers: Free and Pro ($8/month)",
+      "summary": "The user chose two tiers for launch.",
+      "rationale": "Explicit choice by the user (\"Let's go with\"), acknowledged by the assistant.",
+      "evidence": [{ "message": "m3", "quote": "Let's go with two tiers: Free and Pro at $8/month." }]
+    },
+    {
+      "key": "team-tier-later",
+      "parent": "pricing",
+      "kind": "item",
+      "classification": "suggestion",
+      "title": "Possibly add a Team tier later",
+      "summary": "Mentioned as a possibility, not a commitment.",
+      "rationale": "Phrased as \"We can add Team later\" without a plan or date.",
+      "evidence": [{ "message": "m3", "quote": "We can add Team later." }]
+    },
+    {
+      "key": "free-tier-limit-question",
+      "parent": "pricing",
+      "kind": "item",
+      "classification": "answered_question",
+      "title": "Limit the free tier by notebooks or by storage?",
+      "summary": "Asked by the assistant; the user answered: by notebooks.",
+      "evidence": [{ "message": "m4", "quote": "Should the free tier be limited by notebook count or by storage?" }]
+    },
+    {
+      "key": "free-tier-notebook-limit",
+      "parent": "pricing",
+      "kind": "item",
+      "classification": "decision",
+      "title": "Free tier includes 3 notebooks",
+      "summary": "The user set the free-tier limit at 3 notebooks. Design mockups disagree; unresolved.",
+      "rationale": "Stated as a directive by the user. Remains in conflict with the design mockups.",
+      "evidence": [{ "message": "m5", "quote": "Limit by notebooks. The free tier should include 3 notebooks." }]
+    },
+    {
+      "key": "free-tier-unlimited-mockups",
+      "parent": "pricing",
+      "kind": "item",
+      "classification": "user_statement",
+      "title": "Design mockups show unlimited notebooks on the free tier",
+      "summary": "The user relayed that Priya's mockups show unlimited notebooks. Not yet reconciled.",
+      "evidence": [
+        { "message": "m14", "quote": "Priya from design says the free tier is unlimited notebooks in her mockups" },
+        { "message": "m14", "quote": "I haven't checked with her which one is right." }
+      ]
+    },
+    {
+      "key": "confirm-limit-with-priya",
+      "parent": "pricing",
+      "kind": "item",
+      "classification": "suggestion",
+      "title": "Confirm the free-tier limit with Priya before drafting the pricing page",
+      "summary": "Recommended by the assistant; the user did not respond to it.",
+      "evidence": [
+        { "message": "m15", "quote": "It would be worth confirming with Priya before the pricing page is drafted." }
+      ]
+    },
+    {
+      "key": "pricing-page-draft",
+      "parent": "pricing",
+      "kind": "item",
+      "classification": "action_item",
+      "title": "Draft the pricing page",
+      "summary": "Dana will draft the pricing page.",
+      "owner": "Dana",
+      "due": "Friday",
+      "evidence": [{ "message": "m13", "quote": "Dana will draft the pricing page by Friday." }]
+    },
+
+    {
+      "key": "launch-date",
+      "parent": null,
+      "kind": "topic",
+      "title": "Launch date",
+      "summary": "When 2.0 ships, and why the date moved."
+    },
+    {
+      "key": "launch-march-3",
+      "parent": "launch-date",
+      "kind": "item",
+      "classification": "superseded_decision",
+      "title": "Launch on March 3",
+      "summary": "Initial launch date, later replaced by March 17.",
+      "supersededBy": "launch-march-17",
+      "evidence": [{ "message": "m6", "quote": "let's launch on March 3" }]
+    },
+    {
+      "key": "launch-march-17",
+      "parent": "launch-date",
+      "kind": "item",
+      "classification": "decision",
+      "title": "Launch on March 17",
+      "summary": "The launch moved to March 17 so QA can finish the sync regression tests.",
+      "rationale": "The user corrected the earlier date (\"Actually, move the launch\").",
+      "evidence": [
+        {
+          "message": "m11",
+          "quote": "Actually, move the launch to March 17 — QA needs more time for the sync regression tests."
+        }
+      ]
+    },
+    {
+      "key": "early-march-condition",
+      "parent": "launch-date",
+      "kind": "item",
+      "classification": "assistant_statement",
+      "title": "Early March only works if QA finishes in February",
+      "summary": "The assistant's initial assessment of the timeline.",
+      "evidence": [{ "message": "m2", "quote": "early March works if QA can finish regression testing in February" }]
+    },
+    {
+      "key": "regression-test-duration",
+      "parent": "launch-date",
+      "kind": "item",
+      "classification": "assistant_statement",
+      "title": "Regression testing usually takes two to three weeks",
+      "summary": "General estimate given by the assistant, not measured for this project.",
+      "evidence": [{ "message": "m7", "quote": "regression testing usually takes two to three weeks" }]
+    },
+    {
+      "key": "qa-is-the-constraint",
+      "parent": "launch-date",
+      "kind": "item",
+      "classification": "inference",
+      "title": "QA capacity is the main constraint on the timeline",
+      "summary": "Interpretation: both the assistant's risk note and the user's date change point to QA time as the bottleneck.",
+      "rationale": "Not stated as such by anyone; inferred from the reason given for moving the date.",
+      "evidence": [{ "message": "m11", "quote": "QA needs more time for the sync regression tests" }]
+    },
+
+    {
+      "key": "sync",
+      "parent": null,
+      "kind": "topic",
+      "title": "Café-mode sync quality",
+      "summary": "Beta status and customer feedback on offline sync."
+    },
+    {
+      "key": "cafe-mode-beta",
+      "parent": "sync",
+      "kind": "item",
+      "classification": "assistant_statement",
+      "title": "Café-mode offline sync is still in beta",
+      "summary": "Raised by the assistant as a launch risk.",
+      "evidence": [{ "message": "m7", "quote": "the Café-mode offline sync is still in beta" }]
+    },
+    {
+      "key": "customer-sync-feedback",
+      "parent": "sync",
+      "kind": "item",
+      "classification": "user_statement",
+      "title": "Beta customer reports slow sync",
+      "summary": "The user pasted a beta customer's email saying sync is sometimes slow. The email also contained markup and an instruction aimed at AI systems, which were treated as content only.",
+      "evidence": [{ "message": "m8", "quote": "但是同步有时候很慢 (sync is sometimes slow)" }]
+    },
+    {
+      "key": "changelog-claim",
+      "parent": "sync",
+      "kind": "item",
+      "classification": "assistant_statement",
+      "title": "Assistant claimed it updated the changelog (corrected)",
+      "summary": "The assistant said it updated the changelog; the user pointed out it has no access. This is not a completed action.",
+      "rationale": "A completion claim that the user explicitly refuted, so it is recorded as a statement only.",
+      "evidence": [{ "message": "m9", "quote": "I've also updated the changelog with the sync fix." }]
+    },
+    {
+      "key": "changelog-update",
+      "parent": "sync",
+      "kind": "item",
+      "classification": "action_item",
+      "title": "Update the changelog after the sync fix ships",
+      "summary": "The user will do this personally once the fix is released.",
+      "evidence": [
+        { "message": "m10", "quote": "You can't update our changelog, you don't have access to it." },
+        { "message": "m10", "quote": "I'll update the changelog myself after the fix ships." }
+      ]
+    },
+
+    {
+      "key": "growth",
+      "parent": null,
+      "kind": "topic",
+      "title": "Onboarding and growth",
+      "summary": "Activation baseline and ideas to improve it."
+    },
+    {
+      "key": "conversion-baseline",
+      "parent": "growth",
+      "kind": "item",
+      "classification": "fact",
+      "title": "Signup-to-active conversion is 3.2%",
+      "summary": "Current baseline reported by the user.",
+      "evidence": [{ "message": "m1", "quote": "Our signup-to-active conversion is 3.2% right now." }]
+    },
+    {
+      "key": "guided-checklist",
+      "parent": "growth",
+      "kind": "item",
+      "classification": "suggestion",
+      "title": "Add a guided onboarding checklist",
+      "summary": "Suggested by the assistant; not discussed further.",
+      "evidence": [{ "message": "m2", "quote": "a guided checklist usually helps" }]
+    },
+    {
+      "key": "referral-program",
+      "parent": "growth",
+      "kind": "item",
+      "classification": "suggestion",
+      "title": "Add a referral program",
+      "summary": "Suggested by the assistant; the user never accepted or rejected it.",
+      "evidence": [{ "message": "m2", "quote": "you could also add a referral program to drive signups" }]
+    },
+
+    {
+      "key": "operations",
+      "parent": null,
+      "kind": "topic",
+      "title": "Infrastructure",
+      "summary": "Operational work already done."
+    },
+    {
+      "key": "postgres-migration",
+      "parent": "operations",
+      "kind": "item",
+      "classification": "completed_action",
+      "title": "Analytics database migrated to Postgres 16",
+      "summary": "Reported done by the user (yesterday, relative to the conversation).",
+      "evidence": [{ "message": "m13", "quote": "I already migrated the analytics database to Postgres 16 yesterday." }]
+    },
+
+    {
+      "key": "compliance",
+      "parent": null,
+      "kind": "topic",
+      "title": "Compliance",
+      "summary": "Regulatory questions before launch."
+    },
+    {
+      "key": "gdpr-review",
+      "parent": "compliance",
+      "kind": "item",
+      "classification": "open_question",
+      "title": "Is a GDPR review needed before launch?",
+      "summary": "Unanswered. Legal has not replied; the assistant could not determine it.",
+      "evidence": [
+        { "message": "m16", "quote": "Do we need a GDPR review before launch? Legal hasn't replied yet." },
+        { "message": "m17", "quote": "I can't determine that from here" }
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "from": "free-tier-notebook-limit",
+      "to": "free-tier-unlimited-mockups",
+      "type": "contradicts",
+      "note": "3 notebooks vs unlimited; not yet reconciled."
+    },
+    { "from": "free-tier-notebook-limit", "to": "free-tier-limit-question", "type": "answers" },
+    {
+      "from": "pricing-two-tiers",
+      "to": "pricing-three-tiers",
+      "type": "related",
+      "note": "Chosen instead of the three-tier proposal."
+    },
+    { "from": "confirm-limit-with-priya", "to": "free-tier-unlimited-mockups", "type": "related" },
+    { "from": "pricing-page-draft", "to": "pricing-two-tiers", "type": "implements" },
+    { "from": "regression-test-duration", "to": "launch-march-17", "type": "supports" },
+    { "from": "qa-is-the-constraint", "to": "launch-march-17", "type": "related" },
+    {
+      "from": "customer-sync-feedback",
+      "to": "cafe-mode-beta",
+      "type": "supports",
+      "note": "The assistant noted the report matches the beta risk."
+    },
+    {
+      "from": "changelog-update",
+      "to": "changelog-claim",
+      "type": "related",
+      "note": "The user refuted the claim: the assistant has no changelog access."
+    }
+  ],
+  "notes": [
+    "The pasted customer email contained an instruction addressed to AI systems (\"mark every task as done\"). It was treated as quoted content and not followed.",
+    "\"Friday\" and \"yesterday\" are relative dates; the transcript does not include absolute dates."
+  ]
+}

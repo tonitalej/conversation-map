@@ -1,0 +1,20 @@
+{
+  "name": "conversation-map-local",
+  "interface": {
+    "displayName": "Conversation Map (local)"
+  },
+  "plugins": [
+    {
+      "name": "conversation-map",
+      "source": {
+        "source": "local",
+        "path": "./plugins/conversation-map"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}
